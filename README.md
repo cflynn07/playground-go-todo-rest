@@ -32,7 +32,7 @@ Goal is to build a TODO service with a RESTful HTTP API. Another goal is to unit
 - **HTTP Method + PATH**
   - `GET` /todos
 - **Description**
-  - Returns list of all TODOs
+  - Return a list of all todos.
 - **URL Params**
   - None
 - **Body Params**
@@ -51,14 +51,14 @@ Code | Example Content
 - **HTTP Method + PATH**
   - `PUT` /todos/:id
 - **Description**
-  - Returns list of all TODOs
+  - Modify the value of the `complete` property of a todo.
 - **URL Params**
   - None
 - **Body Params**
 
-Key      | Type
----------|--------
-complete | Boolean
+Key      | Type    | Required
+---------|---------|---------
+complete | boolean | true
 
 - **Success Responses:**
 
@@ -66,9 +66,36 @@ Code | Example Content
 -----|----------------
 200  | `{"id": 2, title: "Walk Dog", "complete": true}`
 
-- **Error Response:**
+- **Error Responses:**
 
 Code | Example Content
 -----|----------------
 400  | `{"error": "Bad Request"}`
 404  | `{"error": "Not Found"}`
+
+---
+
+- **HTTP Method + PATH**
+  - `POST` /todos
+- **Description**
+  - Create a new todo.
+- **URL Params**
+  - None
+- **Body Params**
+
+Key   | Type    | Required
+------|---------|---------
+title | string  | true
+
+
+- **Success Responses:**
+
+Code | Example Content
+-----|----------------
+201  | `{"id": 2, title: "Walk Dog", "complete": false}`
+
+- **Error Responses:**
+
+Code | Example Content
+-----|----------------
+400  | `{"error": "Bad Request"}`
