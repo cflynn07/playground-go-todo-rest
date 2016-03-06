@@ -27,36 +27,48 @@ Goal is to build a TODO service with a RESTful HTTP API. Another goal is to unit
 
 ## API Documentation
 
+- All HTTP request bodies should be JSON strings
+
 - **HTTP Method + PATH**
   - `GET` /todos
 - **Description**
   - Returns list of all TODOs
 - **URL Params**
   - None
-- **Data Params**
+- **Body Params**
   - None
 - **Success Response:**
-- Code | Content
-  -----|--------
-  200  | `[{"id": 1, title: "Water Plants", "complete": true}, {"id": 2, title: "Walk Dog", "complete": false}]`
 
-- **Error Response:**
+Code | Example Content
+-----|----------------
+200  | `[{"id": 1, title: "Water Plants", "complete": true}, {"id": 2, title: "Walk Dog", "complete": false}]`
+
+- **Error Responses:**
   None
 
 ---
 
 - **HTTP Method + PATH**
-  - `GET` /todos
+  - `PUT` /todos/:id
 - **Description**
   - Returns list of all TODOs
 - **URL Params**
   - None
-- **Data Params**
-  - None
-- **Success Response:**
-- Code | Content
-  -----|--------
-  200  | `[{"id": 1, title: "Water Plants", "complete": true}, {"id": 2, title: "Walk Dog", "complete": false}]`
+- **Body Params**
+
+Key      | Type
+---------|--------
+complete | Boolean
+
+- **Success Responses:**
+
+Code | Example Content
+-----|----------------
+200  | `{"id": 2, title: "Walk Dog", "complete": true}`
 
 - **Error Response:**
-  None
+
+Code | Example Content
+-----|----------------
+400  | `{"error": "Bad Request"}`
+404  | `{"error": "Not Found"}`
