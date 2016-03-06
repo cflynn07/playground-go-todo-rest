@@ -11,3 +11,4 @@ Notes
 - GoFMT is not 100% comprehensive. Lint tools for golang exist.
   - https://github.com/golang/lint
     - https://www.reddit.com/r/golang/comments/1xtcq9/lint_your_go_software_with_golint_engineered_web/
+    - `golint` does not return non-zero if lint errors detected. `fgt` commonly used with `golint`
