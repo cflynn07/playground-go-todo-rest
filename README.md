@@ -30,31 +30,16 @@ Goal is to build a TODO service with a RESTful HTTP API. Another goal is to unit
 ### Get TODOs
 ----
   Returns list of all TODOs
+- **HTTP Method + PATH**
+  - `GET` /todos
+- **URL Params**
+  - None
+- **Data Params**
+  - None
+- **Success Response:**
+- Code | Content
+  -----|--------
+  200  | `[{"id": 1, title: "Water Plants", "complete": true}, {"id": 2, title: "Walk Dog", "complete": false}]`
 
-* **URL**
-
-  /todos
-
-* **Method:**
-
-  `GET`
-
-*  **URL Params**
-
-  None
-
-* **Data Params**
-
-  None
-
-* **Success Response:**
-
-  * **Code:** 200 <br />
-    **Content:** `[
-      {"id": 1, title: "Water Plants", "complete": true},
-      {"id": 2, title: "Walk Dog", "complete": false}
-    ]`
-
-* **Error Response:**
-
+- **Error Response:**
   None
